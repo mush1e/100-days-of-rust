@@ -21,5 +21,13 @@ fn main() {
         //      f32, f64
         //      true, false 
         // Compound types -> tuples and arrays     
+        let tup : (u32, f64, u8) = (500, 6.4, 1);
+        let (x, y, z) = tup;
+        println!("{x}, {y}, {z}");
 
+    // A tuple without any names is a unit
+
+    let a = [1,2,3,4,5];
+    let a: [u8; 6] = [1,2,3,4,5, 6];
+    println!("{}", a[0]);
 }
