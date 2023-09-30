@@ -36,4 +36,5 @@ fn main() {
     let mut s = String::from("My");
     let word = second_word(&s);
     println!("{}", word);
+    s.clear();
 }
