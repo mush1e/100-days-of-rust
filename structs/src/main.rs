@@ -1,3 +1,4 @@
+// Generic ass struct
 struct User {
     active: bool,
     username: String,
@@ -5,6 +6,13 @@ struct User {
     sign_in_count: u64,
 }
 
+// tuple structs
+struct Color(u32, u32, u32);
+
+// Unit structs
+struct isValid;
+
+// Build struct function mmm very naic :D
 fn build_user (email: &str, username: &str) -> User {
     User {
         active: true,
@@ -14,10 +22,14 @@ fn build_user (email: &str, username: &str) -> User {
     }
 }
 
+
 fn main() {
     let username = String::from("Mu5h1e");
     let email = String::from("abc");
     let user1 = build_user(&email, &username);
+
+    let black = Color(0, 0, 0);
+
 
     println!("{}", user1.email); 
 
@@ -40,4 +52,5 @@ fn main() {
 
     println!("{} is an absolute gigachad", cool_user.username);
     println!("{} is a poopy user", user2.username);
+    println!("{} is the rgb for black", black.0);
 }
