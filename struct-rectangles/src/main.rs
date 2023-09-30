@@ -15,9 +15,9 @@ fn main() {
         height: 50
     };
 
-    // println!(
-    //     "the area of the rectangle is {} units", area(&rectangle)
-    // );
+    println!(
+        "the area of the rectangle is {} units", area(&rectangle)
+    );
 
     dbg!(&rectangle);
 }
