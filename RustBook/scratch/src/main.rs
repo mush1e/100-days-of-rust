@@ -1,25 +1,19 @@
-struct IpAddrV {
-    V4 : (u8, u8, u8, u8),
-    V6 : String
+#[derive(Debug)]
+enum IpAddrType {
+    V4(u8, u8, u8, u8),
+    V6(String)
 }
 
-impl IpAddrV {
-    fn V4(x: u8, y: u8, z: u8, a: u8) -> Self {
-        IpAddrV {
-            V4: (x, y, z, a),
-            V6: "".to_string()
-        }
-    }
-
-    fn display_v4 (&self) -> String {
-        self.V4.0.to_string()
+impl IpAddrType {
+    fn call(&self) -> String {
+        String::from("Made call")
     }
 }
-
-
-
 
 fn main() {
-    let ip_addr = IpAddrV::V4(127,0,0,1);
-    println!("{}" ,ip_addr.display_v4());
+    let v4_addr = IpAddrType::V4(127, 0, 0, 1);
+    let v6_addr = IpAddrType::V6(String::from("::1"));
+    println!("{:#?}", v4_addr.call());
 }
+
+
