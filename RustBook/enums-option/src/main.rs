@@ -4,5 +4,9 @@ fn main() {
 
     let absent_number : Option<i32> = None;
 
+    let x = 5;
+    let y : Option<i32> = None;
+
+    println!("{}", x+y.unwrap_or(5));
     
 }
