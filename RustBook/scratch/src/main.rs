@@ -1,10 +1,12 @@
-fn get_or_default(arg: Option<String>) -> String {
-    if arg.is_none() {
-        return String::new();
+fn remove_zeros(v: &mut Vec<i32>) {
+    for (i, t) in v.iter().enumerate().rev() {
+        if *t == 0 {
+            v.remove(i);
+            v.shrink_to_fit();
+        }
     }
-    let s = arg.unwrap();
-    s.clone()
 }
  fn main() {
-    get_or_default(None);
+    let mut a = vec![0,1,2,3];
+    remove_zeros(&mut a);
  } 
