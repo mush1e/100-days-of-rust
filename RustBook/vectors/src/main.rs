@@ -10,7 +10,7 @@ fn main() {
     let v: Vec<i32> = Vec::new();
     // more common 
     let v = vec![1, 2, 3];
-    // new with alues being pushed
+    // new with values being pushed
     let mut v : Vec<i32> = Vec::new();
     v.push(5);
     v.push(6);
