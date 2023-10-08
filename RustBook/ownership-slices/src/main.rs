@@ -1,7 +1,7 @@
-fn first_word(s :&String) -> &str {
+fn first_word(s: &String) -> &str {
     let bytes = s.as_bytes();
     for (i, &item) in bytes.iter().enumerate() {
-        if item==b' ' {
+        if item == b' ' {
             return &s[..i];
         }
     }
@@ -15,10 +15,17 @@ fn second_word(s: &String) -> &str {
 
     for (i, &item) in bytes.iter().enumerate() {
         if item == b' ' {
-            if i < index1 {index1 = i} else {index2 = i; break;};
+            if i < index1 {
+                index1 = i
+            } else {
+                index2 = i;
+                break;
+            };
         }
     }
-    if index1 > index2 {return &s[..];}
+    if index1 > index2 {
+        return &s[..];
+    }
     &s[index1..index2]
 }
 
