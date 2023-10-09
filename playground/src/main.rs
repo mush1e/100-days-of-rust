@@ -1,3 +1,4 @@
+use std::collections::HashMap;
 use unicode_segmentation::UnicodeSegmentation;
 fn main() {
     // VECTORS
@@ -22,5 +23,21 @@ fn main() {
 
     for i in s3.graphemes(true) {
         println!("{i}");
+    }
+
+    // HashMaps <k, v>
+    let mut scores = HashMap::new();
+
+    scores.insert(String::from("Blue"), 10);
+    scores.insert(String::from("Green"), 50);
+    scores.insert(String::from("Blue"), 30);
+
+    scores.entry(String::from("Yellow")).or_insert(30);
+    scores.entry(String::from("Green")).or_insert(30);
+
+    println!("{:?}", scores.get("Green"));
+
+    for (k, v) in &scores {
+        println!("{} : {}", k, v)
     }
 }
