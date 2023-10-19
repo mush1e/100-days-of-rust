@@ -1,32 +1,17 @@
-use std::fs::File;
-
-fn isPrime(num: i32, rec: i32) -> bool {
-    let mut ret = false;
-    if num == 1 || rec == 1 {
+fn checkPrimeRecursive(num : i32, div : i32) -> bool {
+    if div == 1 || num == 1 {
         return true;
-    } else if num % rec == 0 {
+    } else if num % div == 0{
         return false;
     } else {
-        ret = isPrime(num, rec - 1);
+        return checkPrimeRecursive(num, div-1);
     }
-
-    ret
 }
+fn main () {
+    let x = [64, 32, 7, 5, 9];
+    println!("Welcome to the dumbass program");
 
-fn isPrimeIter(num: i32) -> bool {
-    let mut i = num / 2;
-    while (i > 1) {
-        if num % i == 0 {
-            return false;
-        }
-        i -= 1;
+    for num in x {
+        println!("{}", checkPrimeRecursive(num, num-1));
     }
-    return true;
-}
-
-fn main() {
-    println!("64 -> {}", isPrime(64, 63));
-    println!("73 -> {}", isPrime(73, 72));
-    println!("64 -> {}", isPrimeIter(64));
-    println!("73 -> {}", isPrimeIter(73));
 }
