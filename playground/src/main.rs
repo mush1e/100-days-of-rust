@@ -1,17 +1,12 @@
-fn checkPrimeRecursive(num : i32, div : i32) -> bool {
-    if div == 1 || num == 1 {
-        return true;
-    } else if num % div == 0{
-        return false;
-    } else {
-        return checkPrimeRecursive(num, div-1);
-    }
-}
-fn main () {
-    let x = [64, 32, 7, 5, 9];
-    println!("Welcome to the dumbass program");
+fn main() {
+    let arr = vec![1,2,3,4,5,21,43,56,0,-2];
+    let mut largest = &arr[0];
 
-    for num in x {
-        println!("{}", checkPrimeRecursive(num, num-1));
+    for element in arr {
+        if (largest > element) {
+            largest = element;
+        }
     }
+
+    println("{}", largest);
 }
