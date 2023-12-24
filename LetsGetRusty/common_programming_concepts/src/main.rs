@@ -2,6 +2,19 @@ use std::io;
 
 const THREE_HOURS_IN_SECONDS : u32 = 60 * 60 * 3;
 
+// look function declaration (rust doesnt care where you declare it lexically)
+// trailing return type (kinda like C++)
+
+fn another_function(x: u32) -> u32{
+
+    let x = {
+        x * 2
+    };
+
+    println!("Function has been called :D --{x}");
+    x
+}
+
 fn main() {
 
     // variable declaration stuff
@@ -46,4 +59,7 @@ fn main() {
 
     let element = a[buf];
     println!("the value of the element at index {buf} is {element}");
+    
+    //invoking function to do stuff
+    println!("{}",another_function(5));
 }
