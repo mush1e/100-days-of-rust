@@ -76,5 +76,23 @@ fn main() {
     };
 
     println!("The result of the loop is {result}");
+    let mut outer_count = 0;
+    'outer_loop: loop {
+        let mut inner_count = 0;
+        outer_count += 1;
+        'inner_loop: loop {
+            if inner_count < outer_count {
+                print!("*");
+            }
+            else {
+                break 'inner_loop;
+            }
+            inner_count += 1;
+        }
+        println!("");
+        if outer_count == 10 {
+            break 'outer_loop;
+        }
+    }
 
 }
