@@ -78,27 +78,22 @@ fn main() {
     };
     println!("The result of the loop is {result}");
     
-    // showing the use of loop labels
-    let mut max_count = String::new();
-    io::stdin().read_line(&mut max_count).expect("unable to read line");
-    let max_count : u32 = max_count.trim().parse().expect("Not a number! invalid entry");
-    let mut outer_count = 0;
-    'outer_loop: loop {
-        let mut inner_count = 0;
-        outer_count += 1;
-        'inner_loop: loop {
-            if inner_count < outer_count {
-                print!("*");
-            }
-            else {
-                break 'inner_loop;
-            }
-            inner_count += 1;
-        }
-        println!("");
-        if outer_count == max_count {
-            break 'outer_loop;
-        }
+    // While loops in rust
+    let mut number = 20;
+    while number > 0 {
+        println!("{number}");
+        number -= 1;
     }
 
+    // for in syntax to iterate over a list of elements
+    let arr = [10, 20, 30, 40, 50];
+    for element in arr {
+        println!("The value of the element is {element}");
+    }
+
+    // for in range syntax pretty cool 
+    for i in (1..4).rev() {
+        println!("{i}");
+    }
+    println!("LIFTOFF!");
 }
