@@ -67,6 +67,8 @@ fn main() {
 
     println!("The value of number is: {number}");
 
+
+    // Loop returning value
     let mut count = 0;
     let result = loop {
         count += 1;
@@ -74,8 +76,12 @@ fn main() {
             break count*2;
         }
     };
-
     println!("The result of the loop is {result}");
+    
+    // showing the use of loop labels
+    let mut max_count = String::new();
+    io::stdin().read_line(&mut max_count).expect("unable to read line");
+    let max_count : u32 = max_count.trim().parse().expect("Not a number! invalid entry");
     let mut outer_count = 0;
     'outer_loop: loop {
         let mut inner_count = 0;
@@ -90,7 +96,7 @@ fn main() {
             inner_count += 1;
         }
         println!("");
-        if outer_count == 10 {
+        if outer_count == max_count {
             break 'outer_loop;
         }
     }
